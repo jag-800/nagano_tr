@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope module: :public do
-    root to:  'homes#top'
+    root to: 'homes#top'
     get 'homes/about'
   end
   namespace :admin do
@@ -19,15 +19,23 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
+  scope module: :public do
+    get 'customers/show'
+    get 'customers/edit'
+    get 'customers/confirm'
   end
   namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  
+              
+  scope module: :public do
+    resources :items, only: [:index, :show]
+  end
+  namespace :admin do
+    resources :items, except: [:destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
