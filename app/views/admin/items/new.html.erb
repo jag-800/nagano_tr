@@ -24,11 +24,38 @@
   </div>
 
   <div class="form-group row">
+    <label for="inputGenre" class="col-sm-2 col-form-label">ジャンル</label>
+    <div class="col-sm-5">
+      <select class="form-control form-control-sm">
+        <option selected disabled value="">-- 選択してください --</option>
+        <% @genres.each do |genre| %>
+        <option><%= genre.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
     <label for="inputName" class="col-sm-2 col-form-label">税抜価格</label>
     <div class="col-sm-5">
       <%= f.text_field :price, autofocus: true, id:"inputName", placeholder: "1000", class:"form-control" %>円
     </div>
   </div>
+
+  <div class="form-group row">
+    <label for="inputStatus" class="col-sm-2 col-form-label">販売ステータス</label>
+    <div class="col-sm-5">
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :is_active, '販売中', checked: true, class: 'form-check-input' %>
+        <%= f.label :is_active, '販売中', value: '販売中', class: 'form-check-label' %>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :is_active, '販売停止中', class: 'form-check-input' %>
+        <%= f.label :is_active, '販売停止中', value: '販売停止中', class: 'form-check-label' %>
+      </div>
+    </div>
+  </div>
+
 
   <%= f.submit '新規登録', class: "btn btn-success" %>
 
