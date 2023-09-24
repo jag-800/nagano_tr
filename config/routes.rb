@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
+  scope module: :public do
+    root to:  'homes#top'
+    get 'homes/about'
   end
   namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
+    get 'homes/top'
   end
   # 顧客用
   # URL /customers/sign_in ...
@@ -21,5 +18,16 @@ Rails.application.routes.draw do
   devise_for :admin,skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
+  
+  namespace :public do
+    get 'items/index'
+    get 'items/show'
+  end
+  namespace :admin do
+    get 'items/index'
+    get 'items/new'
+    get 'items/show'
+    get 'items/edit'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
