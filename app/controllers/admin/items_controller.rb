@@ -13,7 +13,7 @@ class Admin::ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
     # item.admin_id = admin.id
-    if item.save!
+    if item.save
       redirect_to admin_items_path
     else
       @items = Item.page(params[:page])

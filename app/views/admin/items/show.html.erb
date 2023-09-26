@@ -20,7 +20,7 @@
       </tr>
       <tr>
         <td>税込価格(税抜価格)</td>
-        <td><%= (@item.price * 1.1).to_i %>(<%= @item.price %>)円</td>
+        <td><%= (number_with_delimiter(@item.price) * 1.1).to_i %>(<%= number_with_delimiter(@item.price) %>)円</td>
       </tr>
       <tr>
         <td>販売ステータス</td>

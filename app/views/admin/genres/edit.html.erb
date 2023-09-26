@@ -1,6 +1,6 @@
 <span class="py-2 px-3 bg-secondary">ジャンル編集</span>
 
-<%= form_with model: @genre, url:'/admin/genres' do |f| %>
+<%= form_with model: @genre, url: admin_genre_path(@genre), method: :patch do |f| %>
 
   <div class="form-group row">
     <label for="inputName" class="col-sm-2 col-form-label">ジャンル名</label>

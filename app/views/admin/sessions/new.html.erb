@@ -1,6 +1,6 @@
 <span class="py-2 px-3 bg-secondary">管理者ログイン</span>
 
-<%= form_with url: customer_session_path do |f| %>
+<%= form_with model: @admin, url: admin_session_path do |f| %>
   <div class="field">
     <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
