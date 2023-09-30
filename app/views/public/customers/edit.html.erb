@@ -1,6 +1,6 @@
 <span class="py-2 px-3 bg-secondary">会員編集登録</span>
 
-<%= form_with model: @customer, url: customer_registration_path do |f| %>
+<%= form_with model: @customer, method: :patch do |f| %>
 
   <div class="form-group row">
     <label for="inputName" class="col-sm-2 col-form-label">名前</label>
@@ -42,21 +42,7 @@
   <div class="form-group row">
     <label for="inputPhone_number" class="col-sm-2 col-form-label">電話番号(ハイフンなし)</label>
     <div class="col-sm-5">
-      <%= f.text_field :phone_number, autofocus: true, id:"inputPhone_number", placeholder:"00000000000", class:"form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">パスワード(6文字以上)</label>
-    <div class="col-sm-5">
-      <%= f.password_field :password, autofocus: true, id:"inputPassword", autocomplete: "new-password", class:"form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label for="inputPassword_confirmation" class="col-sm-2 col-form-label">パスワード(確認用)</label>
-    <div class="col-sm-5">
-      <%= f.password_field :password_confirmation, autofocus: true, id:"inputPassword_confirmation", class:"form-control" %>
+      <%= f.text_field :phone_number, autofocus: true, id:"inputPhone_number", class:"form-control" %>
     </div>
   </div>
 
