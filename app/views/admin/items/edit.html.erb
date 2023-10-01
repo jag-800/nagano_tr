@@ -1,4 +1,8 @@
-<span class="py-2 px-3 bg-secondary">商品編集</span>
+<div class="row">
+  <div class="offset-md-1">
+    <h5 class="px-4 table-secondary mb-4">商品編集</h5>
+  </div>
+</div>
 
 <%= form_with model: @item, url: admin_item_path(@item), method: :patch do |f| %>
 

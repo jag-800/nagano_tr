@@ -1,7 +1,10 @@
-<span class="py-2 px-3 bg-secondary">商品詳細</span>
-<br>
-
 <div class="row">
+  <div class="offset-md-1">
+    <h5 class="px-4 table-secondary mb-4">商品詳細</h5>
+  </div>
+</div>
+
+<div class="row　mt-3">
   <%= image_tag @item.item_image, size: "200x200" %>
   <% image_tag @item.get_item_image(50,50) %>
   <table class="">

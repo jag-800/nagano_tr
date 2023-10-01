@@ -1,4 +1,14 @@
-<span class="py-2 px-3 bg-secondary">ログイン</span>
+<div class="row">
+  <div class="offset-md-1">
+    <h5 class="px-4 table-secondary mb-4">ログイン</h5>
+  </div>
+</div>
+
+<div class="row">
+  <div class="offset-md-1">
+    <h5 class="py-2 px-3 table-secondary mb-4">会員の方はこちらから</h5>
+  </div>
+</div>
 
 <%= form_with model: @customer, url: admin_session_path do |f| %>
   <div class="form-group row">
@@ -20,5 +30,9 @@
   </div>
 <% end %>
 
-<span class="py-2 px-3 bg-secondary">会員登録がお済みでない方</span>
+<div class="row">
+  <div class="offset-md-1">
+    <h5 class="py-2 px-3 table-secondary mb-4">会員登録がお済みでない方</h5>
+  </div>
+</div>
 <p><%= render "public/shared/links" %></p>
