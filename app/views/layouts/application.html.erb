@@ -17,7 +17,7 @@
         <%= link_to "LOGO", root_path, class:"btn btn-lg btn-outline-secondary px-5" %>
         <div class="d-flex flex-column mt-3 ml-auto">
           <ul class="row list-unstyled mr-auto">
-            <% if admin_signed_in?%>
+            <% if admin_signed_in? %>
               <li class="mr-5">
                 <%= link_to "商品一覧", admin_items_path, class:"btn btn-outline-secondary" %>
               </li>
@@ -29,6 +29,19 @@
               </li>
               <li class="mr-5">
                 <%= link_to "ジャンル一覧", root_path, class:"btn btn-outline-secondary" %>
+              </li>
+              <li class="">
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary" %>
+              </li>
+            <% elsif customer_signed_in? %>
+              <li class="mr-5">
+                <%= link_to "マイページ", customer_path(current_customer), class:"btn btn-outline-secondary" %>
+              </li>
+              <li class="mr-5">
+                <%= link_to "商品一覧", items_path, class:"btn btn-outline-secondary" %>
+              </li>
+              <li class="mr-5">
+                <%= link_to "カート", root_path, class:"btn btn-outline-secondary" %>
               </li>
               <li class="">
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary" %>
