@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'homes/about'
     resources :customers, only: [:show, :edit, :update, :confirm]
     resources :items, only: [:index, :show]
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   end
 
   namespace :admin do
